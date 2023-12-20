@@ -1,9 +1,6 @@
 import Counter from "../counter/component";
-import { getDishes } from "@/services/api";
 
-export const Dish = async ({ dishId }) => {
-  const dish = await getDishes(dishId);
-
+export const Dish = async ({ dish }) => {
   return (
     <div>
       {dish.name}

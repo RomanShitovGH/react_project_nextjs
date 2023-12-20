@@ -10,13 +10,20 @@ export async function getRestaurant(restaurantId) {
 
   return result.json();
 }
-export async function getDishes(dishId) {
-  const result = await fetch(`http://localhost:3001/api/dish/${dishId}`);
+export async function getDishes(restaurantId) {
+  const result = await fetch(
+    `http://localhost:3001/api/dishes?` +
+      new URLSearchParams({ restaurantId: restaurantId })
+  );
 
   return result.json();
 }
-export async function getReviews(reviewId) {
-  const result = await fetch(`http://localhost:3001/api/review/${reviewId}`);
+
+export async function getReviews(restaurantId) {
+  const result = await fetch(
+    `http://localhost:3001/api/reviews?` +
+      new URLSearchParams({ restaurantId: restaurantId })
+  );
 
   return result.json();
 }

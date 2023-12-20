@@ -7,10 +7,10 @@ export const Restaurant = ({ restaurant }) => {
       <h3>{restaurant.name}</h3>
 
       <p>Меню</p>
-      <Menu dishes={restaurant.menu} />
+      <Menu restaurantId={restaurant.id} />
 
       <p>Отзывы</p>
-      <Reviews reviews={restaurant.reviews} />
+      <Reviews restaurantId={restaurant.id} />
     </div>
   );
 };

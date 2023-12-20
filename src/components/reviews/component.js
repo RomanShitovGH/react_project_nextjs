@@ -1,10 +1,13 @@
+import { getReviews } from "@/services/api";
 import { Review } from "../review/component";
 
-export const Reviews = ({ reviews }) => {
+export const Reviews = async ({ restaurantId }) => {
+  const reviews = await getReviews(restaurantId);
+
   return (
     <div>
       {reviews.map((review) => (
-        <Review reviewId={review} />
+        <Review review={review} />
       ))}
     </div>
   );
